@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
@@ -13,8 +15,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.6.2</app.runtime>
-		<mule.maven.plugin.version>4.1.0</mule.maven.plugin.version>
+		<app.runtime>4.4.0</app.runtime>
+		<mule.maven.plugin.version>3.8.7</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -30,6 +32,25 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>3.8.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>raj_study</username>
+						<password>Study@1234</password>
+						<applicationName>mulesoft-cicd-sample</applicationName>
+						<environment>Sandbox</environment>
+						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
